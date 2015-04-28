@@ -22,10 +22,19 @@
       </form>
       <div class='search-label'>Searching for: {{searchCtrl.searchTerm}}</div>
       <ul class='list-group' ng-repeat='user in searchCtrl.searchResult.items'>
-        <li>
-          <img height= '42' width='42' ng-src='{{user.avatar_url}}&s=50'
-          <a ng-href='{{user.html_url}}'>{{user.login}}</a>
-        </li>
+        <table class='table'>
+          <tbody>
+            <tr>
+              <td width='50px'>
+                <img height= '42' width='42' ng-src='{{user.avatar_url}}&s=50'>
+              </td>
+              <td>
+                <a ng-href='{{user.html_url}}'>{{user.login}}</a>
+                <p>Repos: {{user.public_repos}}</p>
+              </td>
+            </tr>
+        </tbody>
+        </table
       </ul>
     </div>
   </body>
